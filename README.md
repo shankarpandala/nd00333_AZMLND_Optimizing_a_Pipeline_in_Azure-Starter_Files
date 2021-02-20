@@ -41,7 +41,21 @@ RandomParameterSampling is a technique which randomly picks the hyperparameters 
 Bandit policy is based on slack factor and evaluation interval. Bandit terminates runs where the primary metric is not within the specified slack factor compared to the best performing run. Slack factor is the slack allowed with respect to the best performing training run.
 
 ## AutoML
-**Below are the models ran by AutoML
+
+AUtoML ran training on multiple algoritms and hyperparameters. Turns out voting ensemble with an accuracy of 91.68% is the best model
+
+Voting Ensemble is an ensemble technique where it takes the majority voting of multiple models which reduces the bias of single model towards data.
+
+Parameters provided to AutoML are:
+ - experiment_timeout_minutes is set to 30 minutes to cutdown resource utiliztion beyond certain time
+ - task='classification' specified the task we need to perform on the data
+  - primary_metric='accuracy' is specified to to tell AutoML to optimize this purticular metric
+  - training_data specifies the input data to AutoML
+  - label_column_name='label' specifies the target column
+  - n_cross_validations=5 is specified to perform the cross validation 5 times to avoid overfitting
+
+
+Below are the models ran by AutoML
 ****************************************************************************************************
 ITERATION: The iteration being evaluated.
 
@@ -103,4 +117,5 @@ Difference between AutoML and Hyperdrive pipelines accuracy is very narrow. Auto
 ## Future work
 **What are some areas of improvement for future experiments? Why might these improvements help the model?**
 
-Hyperprameter optimization is performed only for Logistic Regression there is a lot of scope to optimise hyperparameters in other algorithms. All other potential algorithms needs to be tried out.
+ - Hyperprameter optimization is performed only for Logistic Regression there is a lot of scope to optimise hyperparameters in other algorithms. All other potential algorithms needs to be tried out to know which algorithm and hyperparameter combination can give better accuray.
+  - Try Bayesian parameter optimization and run it for longer time so that optimises based on the previous hyperparameters.
