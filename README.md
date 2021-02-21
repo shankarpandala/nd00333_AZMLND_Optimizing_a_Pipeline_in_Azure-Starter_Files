@@ -121,4 +121,4 @@ Difference between AutoML and Hyperdrive pipelines accuracy is very narrow. Auto
   - Try Bayesian parameter optimization and run it for longer time so that optimises based on the previous hyperparameters.
 
 ## Proof of cluster clean up
-  I have deleted the compute cluster from the UI manually. I haven't take any screenshot. This can also be done using azuremlsdk using aml_compute.delete() method
+  ![Proof of cluster deletion](proof.png "Proof of cluster deletion")
